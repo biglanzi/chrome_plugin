@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+  "name": "过滤不想看的标签",
+  "version": "1.0",
+  "description": "眼不见为净",
+  "browser_action": {
+    "default_popup": "popup.html",
+	"default_icon": "1.png"
+  },
+   "permissions": [
+        "tabs",
+        "activeTab",
+        "notifications",
+        "storage"
+    ],
+  "content_scripts": [
+    {
+      "matches": ["file://*/*","http://*/*"],
+      "js": ["contentScripts.js"]
+    }
+  ]
+ }

@@ -1,6 +1,6 @@
-chrome.runtime.onConnect.addListener((port)=>{//建立监听
-    if(port.name == "filter"){//判断通道名称
-        port.onMessage.addListener((msg)=>{//监听消息
+chrome.runtime.onConnect.addListener((port)=>{
+    if(port.name == "filter"){
+        port.onMessage.addListener((msg)=>{
 			filter(msg.kw,msg.tag)
         });
     }
